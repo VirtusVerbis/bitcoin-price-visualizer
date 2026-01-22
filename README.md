@@ -12,7 +12,7 @@ An interactive Android application that displays real-time Bitcoin prices from B
 ### Interactive Sprite System
 - **Bitcoin Sprites**: 
   - Orange Bitcoin sprites (Binance-controlled)
-  - Blue Bitcoin sprites (Coinbase-controlled)
+  - White Bitcoin sprites (Coinbase-controlled)
   - Draggable and interactive
   - Clone spawning mechanics with cooldown system
   

@@ -1524,8 +1524,14 @@ fun BouncingSprite(
                     } else if (spriteState.velocity.x > 0 && spriteState.velocity.y > 0) {
                         // Moving down-right (positive X, positive Y)
                         catDirection = "down_right"
+                    } else if (spriteState.velocity.x < 0 && spriteState.velocity.y < 0) {
+                        // Moving up-left (negative X, negative Y)
+                        catDirection = "up_left"
+                    } else if (spriteState.velocity.x > 0 && spriteState.velocity.y < 0) {
+                        // Moving up-right (positive X, negative Y)
+                        catDirection = "up_right"
                     } else {
-                        // Other diagonals not yet implemented, fall back to horizontal/vertical
+                        // Fall back to horizontal/vertical
                         if (absX > absY) {
                             if (spriteState.velocity.x < 0) {
                                 catDirection = "left"
@@ -1601,6 +1607,16 @@ fun BouncingSprite(
                     0 -> R.drawable.e_cat_down_right_1
                     1 -> R.drawable.e_cat_down_right_2
                     else -> R.drawable.e_cat_down_right_1
+                }
+                "up_left" -> when (catAnimationFrame) {
+                    0 -> R.drawable.e_cat_up_left_1
+                    1 -> R.drawable.e_cat_up_left_2
+                    else -> R.drawable.e_cat_up_left_1
+                }
+                "up_right" -> when (catAnimationFrame) {
+                    0 -> R.drawable.e_cat_up_right_1
+                    1 -> R.drawable.e_cat_up_right_2
+                    else -> R.drawable.e_cat_up_right_1
                 }
                 else -> R.drawable.e_cat_down_1 // Default to down frames
             }

@@ -1,4 +1,6 @@
-# Bitcoin Price Visualizer
+# BTC Cat
+
+**Bitcoin Price Visualizer**
 
 An interactive Android application that displays real-time Bitcoin prices from Binance and Coinbase exchanges with animated sprite-based visualization.
 
@@ -12,7 +14,7 @@ An interactive Android application that displays real-time Bitcoin prices from B
 ### Interactive Sprite System
 - **Bitcoin Sprites**: 
   - Orange Bitcoin sprites (Binance-controlled)
-  - White Bitcoin sprites (Coinbase-controlled)
+  - Bitcoin sprites (Coinbase-controlled)
   - Draggable and interactive
   - Clone spawning mechanics with cooldown system
   
@@ -23,10 +25,10 @@ An interactive Android application that displays real-time Bitcoin prices from B
 
 - **Cat Sprite**: 
   - Animated cat that roams the screen
-  - 4-directional animations (up, down, left, right)
+  - 8-directional animations: 4 cardinal directions (up, down, left, right) + 4 diagonal directions (up-left, up-right, down-left, down-right)
   - Random starting direction on app launch
   - Unaffected by collisions with other sprites
-  - Smooth 2-frame animations for each direction
+  - Smooth 2-frame animations for each direction using diagonal detection constants
 
 ### Physics & Interactions
 - **Collision Detection**: Sprites bounce off each other and screen boundaries
@@ -60,7 +62,7 @@ An interactive Android application that displays real-time Bitcoin prices from B
 - `VolumeBar.kt`: Volume visualization components
 
 ### Sprite System
-- **Sprite Types**: Bitcoin (Orange/Blue), Fiat USD, Cat
+- **Sprite Types**: Bitcoin Orange (Binance-controlled), Bitcoin (Coinbase-controlled), Fiat USD, Cat
 - **Animation System**: Frame-based animations with configurable delays
 - **Collision System**: Physics-based collision detection and response
 - **Clone System**: Sprites can spawn clones with cooldown timers
@@ -75,6 +77,22 @@ An interactive Android application that displays real-time Bitcoin prices from B
 
 ### Installation
 
-1. Clone the repository:ash
-git clone https://github.com/VirtusVerbis/bitcoin-price-visualizer.git
-cd bitcoin-price-visualizer
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/VirtusVerbis/bitcoin-price-visualizer.git
+   cd bitcoin-price-visualizer
+   ```
+
+2. Open the project in Android Studio
+
+3. Sync Gradle files and wait for dependencies to download
+
+4. Build the project:
+   ```bash
+   ./gradlew build
+   ```
+
+5. Run the app:
+   - Connect an Android device or start an emulator
+   - Click the Run button in Android Studio, or
+   - Run from command line: `./gradlew installDebug`
